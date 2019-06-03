@@ -1,5 +1,6 @@
 module Dga
+export Banjori, Corebot
 
-greet() = print("Hello World!")
-
+include("./Banjori.jl")
+include("./Corebot.jl")
 end # module
