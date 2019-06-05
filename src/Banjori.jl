@@ -22,7 +22,7 @@ function gen_one(seed="cckuailong")
     end
 end
 
-function gen_many(num)
+function gen_many(cnt=100)
     res = []
     seeds = ["somestring", "firetruck", "bulldozer", "airplane", "racecar",
             "apartment", "laptop", "laptopcomp", "malwareisbad", "crazytrain",
@@ -36,8 +36,8 @@ function gen_many(num)
             "albuquerque", "sanfrancisco", "sandiego", "losangeles", "newyork",
             "atlanta", "portland", "seattle", "washingtondc"]
     seed_len = length(seeds)
-    each_seed_items = num / seed_len
-    remain_items = num % seed_len
+    each_seed_items = trunc(Int64, cnt/seed_len)
+    remain_items = cnt % seed_len
     for seed in seeds
         for i in 1:each_seed_items
             seed = next_domain(seed)
