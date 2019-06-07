@@ -1,5 +1,5 @@
 module Ramdo
-function gen_one(iter=rand(Int16), seed_num=5, len=rand(8:0x10), tld=false)
+function gen_one(iter=rand(Int16), seed_num=5, len=rand(8:0x10), add_tld=false)
     domain = ""
     sh1 = seed_num << 1
     step1 = (iter+1) * sh1
@@ -21,7 +21,9 @@ function gen_one(iter=rand(Int16), seed_num=5, len=rand(8:0x10), tld=false)
         xor1 = xor1 + xor2
         domain_length += 1
     end
-
+    if add_tld
+        domain *= ".org"
+    end
     return domain
 end
 
