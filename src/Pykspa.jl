@@ -22,7 +22,7 @@ function gen_one(nr=missing, date=missing, set_nr=2, add_tld=false)
     if nr === missing
         nr = rand(Int8)
     end
-    seeds = JSON.parsefile(pwd()*@sprintf("/Dga.jl/data/set%d_seeds.json",set_nr))
+    seeds = JSON.parsefile(string(@__DIR__) * @sprintf("/../data/set%d_seeds.json",set_nr))
     dt = Dates.datetime2unix(Dates.DateTime(date))
     days = set_nr==1 ? 20 : 1
     index = trunc(Int64, dt/(days*3600*24))
@@ -48,9 +48,9 @@ end
 function gen_many(cnt=100)
     res = []
     date = Dates.Date(Dates.now())
-    seeds = JSON.parsefile(pwd()*@sprintf("/Dga.jl/data/set%d_seeds.json",set_nr))
+    seeds = JSON.parsefile(string(@__DIR__) * @sprintf("/../data/set2_seeds.json"))
     dt = Dates.datetime2unix(Dates.DateTime(date))
-    days = set_nr==1 ? 20 : 1
+    days = 1
     index = trunc(Int64, dt/(days*3600*24))
     if !(string(index) in keys(seeds))
         return domain

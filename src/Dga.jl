@@ -2,15 +2,15 @@ module Dga
 export Banjori, Corebot, Cryptolocker, Dircrypt, Kraken
 export Lockyv2, Pykspa, Qakbot, Ramdo, Ramnit, Simda
 
-include("./Banjori.jl")
-include("./Corebot.jl")
-include("./Cryptolocker.jl")
-include("./Dircrypt.jl")
-include("./Kraken.jl")
-include("./Lockyv2.jl")
-include("./Pykspa.jl")
-include("./Qakbot.jl")
-include("./Ramdo.jl")
-include("./Ramnit.jl")
-include("./Simda.jl")
+include(string(@__DIR__) * "/Banjori.jl")
+include(string(@__DIR__) * "/Corebot.jl")
+include(string(@__DIR__) * "/Cryptolocker.jl")
+include(string(@__DIR__) * "/Dircrypt.jl")
+include(string(@__DIR__) * "/Kraken.jl")
+include(string(@__DIR__) * "/Lockyv2.jl")
+include(string(@__DIR__) * "/Pykspa.jl")
+include(string(@__DIR__) * "/Qakbot.jl")
+include(string(@__DIR__) * "/Ramdo.jl")
+include(string(@__DIR__) * "/Ramnit.jl")
+include(string(@__DIR__) * "/Simda.jl")
 end # module
