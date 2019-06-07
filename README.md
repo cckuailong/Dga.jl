@@ -4,7 +4,7 @@
 Domain generate Algrithom is commonlly used in malware software.
 Dga.jl can make you generate one or many DGAs in your own.
 
-Th included DGAs are [Banjori,Corebot,Cryptolocker,Dircrypt,Kraken,Lockyv2,Pykspa,Qakbot
+The included DGAs are [Banjori,Corebot,Cryptolocker,Dircrypt,Kraken,Lockyv2,Pykspa,Qakbot
 Ramdo,Ramnit,Simda]
 ## Install & Import
 ```
