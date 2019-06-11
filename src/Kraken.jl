@@ -30,7 +30,7 @@ function gen_one(index=missing, date=missing, seed_set='a', tld_set_nr=3, tmp=tr
     else
         r = 3*domain_nr + seeds[seed_set]["nex"]
     end
-    discards = trunc(Int64, (Dates.datetime2unix(Dates.now())-1207000000)/604800) + 2
+    discards = trunc(Int64, (time()-1207000000)/604800) + 2
     if domain_nr % 9 < 8
         if domain_nr % 9 >= 6
             discards -= 1
