@@ -1,5 +1,5 @@
 module Qakbot
-using Printf,CRC32c,Dates
+using CRC32c,Dates
 
 mutable struct OBJ
     index
@@ -9,7 +9,7 @@ end
 function date2seed(date, seed)
     dx = trunc(Int64, (Dates.day(date)-1) / 10)
     dx = dx<=2 ? dx : 2
-    data = @sprintf("%d.%s,%s,%s", dx,lowercase(Dates.monthabbr(date)),Dates.year(date),seed)
+    data = "$dx.$(lowercase(Dates.monthabbr(date))).$(Dates.year(date)).$seed"
     crc = crc32c(data)
     return crc
 end

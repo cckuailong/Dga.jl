@@ -1,5 +1,5 @@
 module Pykspa
-using Printf, JSON, Dates
+using JSON, Dates
 
 function get_sld(length, seed)
     sld = ""
@@ -22,7 +22,7 @@ function gen_one(nr=missing, date=missing, set_nr=2, add_tld=false)
     if nr === missing
         nr = rand(Int8)
     end
-    seeds = JSON.parsefile(string(@__DIR__) * @sprintf("/../data/set%d_seeds.json",set_nr))
+    seeds = JSON.parsefile(string(@__DIR__) * "/../data/set$(set_nr)_seeds.json")
     dt = Dates.datetime2unix(Dates.DateTime(date))
     days = set_nr==1 ? 20 : 1
     index = trunc(Int64, dt/(days*3600*24))
@@ -48,7 +48,7 @@ end
 function gen_many(cnt=100)
     res = []
     date = Dates.Date(Dates.now())
-    seeds = JSON.parsefile(string(@__DIR__) * @sprintf("/../data/set2_seeds.json"))
+    seeds = JSON.parsefile(string(@__DIR__) * "/../data/set2_seeds.json")
     dt = Dates.datetime2unix(Dates.DateTime(date))
     days = 1
     index = trunc(Int64, dt/(days*3600*24))
